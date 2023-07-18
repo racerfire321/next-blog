@@ -42,19 +42,19 @@ const Navbar = () => {
   const session = useSession();
 
   return (
-    <div className={styles.container}>
-      <Link href="/" className={styles.logo}>
+    <div class=" h-20 flex justify-between items-center ">
+      <Link href="/" class="font-bold text-xl  ">
         lamamia
       </Link>
-      <div className={ h=100 , flex,align-item=center,justify-Content=space-between}>
+      <div class="flex items-center gap-5">
         <DarkModeToggle />
         {links.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
+          <Link key={link.id} href={link.url} >
             {link.title}
           </Link>
         ))}
         {session.status === "authenticated" && (
-          <button className={styles.logout} onClick={signOut}>
+          <button class=" px-3 py-1 bg-green-500 text-white rounded"onClick={signOut}>
             Logout
           </button>
         )}
