@@ -29,33 +29,33 @@ const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
   return (
     <div className={styles.container}>
-      <div className={styles.top}>
-        <div className={styles.info}>
-          <h1 className={styles.title}>{data.title}</h1>
-          <p className={styles.desc}>
+      <div class="flex ">
+        <div class="flex-1 flex flex-col justify-between">
+          <h1 class=" text-40">{data.title}</h1>
+          <p class="text-18 font-light">
             {data.desc}
           </p>
-          <div className={styles.author}>
+          <div class="flex items-center space-x-2">
             <Image
               src={data.img}
               alt=""
               width={40}
               height={40}
-              className={styles.avatar}
+              class="w-10 h-10 rounded-full"
             />
             <span className={styles.username}>{data.username}</span>
           </div>
         </div>
-        <div className={styles.imageContainer}>
+        <div class="flex-1 h-300 relative">
           <Image
             src={data.img}
             alt=""
             fill={true}
-            className={styles.image}
+            class="object-cover"
           />
         </div>
       </div>
-      <div className={styles.content}>
+      <div class="mt-50 text-20 font-light text-gray-500 text-justify">
         <p className={styles.text}>
          {data.content}
         </p>

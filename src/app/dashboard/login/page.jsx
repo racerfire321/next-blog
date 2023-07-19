@@ -37,46 +37,39 @@ const Login = ({ url }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{success ? success : "Welcome Back"}</h1>
-      <h2 className={styles.subtitle}>Please sign in to see the dashboard.</h2>
+    <div class="flex align-center flex-col gap-5">
+      <h1 class="text-#bbb">{success ? success : "Welcome Back"}</h1>
+      <h2 class=" text-lg mb-7 text-gray-300 ">Please sign in to see the dashboard.</h2>
 
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit} class="w-60 flex flex-col gap-5">
         <input
           type="text"
           placeholder="Email"
           required
-          className={styles.input}
+          class="p-5 bg-transparent border-1 border-gray border-r-5 outline-none font-md font-bold"
         />
         <input
           type="password"
           placeholder="Password"
           required
-          className={styles.input}
+          class="p-4 bg-transparent border-2 border-solid border-r-5 outline-none font-#bbb text-lg font-bold"
         />
-        <button className={styles.button}>Login</button>
+        <button class=" w-60 p-5 cursor-pointer bg-color-#53c28b border-none boredr-r-5 font-#eee font-bold">Login</button>
         {error && error}
       </form>
       <button
         onClick={() => {
           signIn("google");
         }}
-        className={styles.button + " " + styles.google}
+       
       >
         Login with Google
       </button>
-      <span className={styles.or}>- OR -</span>
-      <Link className={styles.link} href="/dashboard/register">
+      <span class="color-#bbb">- OR -</span>
+      <Link class=" underline font-#7d7c7c" href="/dashboard/register">
         Create new account
       </Link>
-      {/* <button
-        onClick={() => {
-          signIn("github");
-        }}
-        className={styles.button + " " + styles.github}
-      >
-        Login with Github
-      </button> */}
+      
     </div>
   );
 };

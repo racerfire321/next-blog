@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import React from "react";
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-import { signOut, useSession } from "next-auth/react";
+import DarkModeToggle from './DarkModelToggle';
+import { signOut, useSession } from 'next-auth/client';
+
 
 const links = [
   {
