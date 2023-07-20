@@ -35,29 +35,29 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div class=" flex flex-col gap-5 align-center justify-cebter">
       <h1 className={styles.title}>Create an Account</h1>
       <h2 className={styles.subtitle}>Please sign up to see the dashboard.</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit} class="w-60 flex flex-col gap-5">
         <input
           type="text"
           placeholder="Username"
           required
-          className={styles.input}
+          class="p-5 bg-transparent border-2 border-solid border-#bbb font-#bbb border-r-5 text-lg font-bold"
         />
         <input
           type="text"
           placeholder="Email"
           required
-          className={styles.input}
+          class="p-5 bg-transparent border-2 border-solid border-#bbb font-#bbb border-r-5 text-lg font-bold"
         />
         <input
           type="password"
           placeholder="Password"
           required
-          className={styles.input}
+          class="p-5 bg-transparent border-2 border-solid border-#bbb font-#bbb border-r-5 text-lg font-bold"
         />
-        <button className={styles.button}>Register</button>
+        <button class="w-60 p-5 cursor-pointer bg-#53c28b border-none border-r-5 color-#eee font-bold">Register</button>
         {error && "Something went wrong!"}
       </form>
       <span className={styles.or}>- OR -</span>

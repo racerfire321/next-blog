@@ -67,18 +67,17 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className={styles.container}>
-        <div className={styles.posts}>
+      <div class="flex gap-24">
+        <div class="flex-1">
           {isLoading
             ? "loading"
-            : data?.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.imgContainer}>
+            : data?.map((post) => (                <div class="flex items-center justify-between mt-13 mb-13"key={post._id}>
+                  <div class="w-50 h-25 position-0">
                     <Image src={post.img} alt="" width={200} height={100} />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
                   <span
-                    className={styles.delete}
+                    class=" cursor-pointer text-red "
                     onClick={() => handleDelete(post._id)}
                   >
                     X
@@ -86,18 +85,18 @@ const Dashboard = () => {
                 </div>
               ))}
         </div>
-        <form className={styles.new} onSubmit={handleSubmit}>
+        <form class="flex-1 flex flex-col gap-5" onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
-          <input type="text" placeholder="Title" className={styles.input} />
-          <input type="text" placeholder="Desc" className={styles.input} />
-          <input type="text" placeholder="Image" className={styles.input} />
+          <input type="text" placeholder="Title" class=" p-3 bg-transparent border-2 border-solid border-r-3 text-#bbb text-xl font-bold" />
+          <input type="text" placeholder="Desc"class=" p-3 bg-transparent border-2 border-solid border-r-3 text-#bbb text-xl font-bold" />
+          <input type="text" placeholder="Image" class=" p-3 bg-transparent border-2 border-solid border-r-3 text-#bbb text-xl font-bold" />
           <textarea
             placeholder="Content"
-            className={styles.textArea}
+            class=" p-3 bg-transparent border-2 border-solid border-r-3 text-#bbb text-xl font-bold"
             cols="30"
             rows="10"
           ></textarea>
-          <button className={styles.button}>Send</button>
+          <button class="p-5 cursor-pointer bg-#53c28b border-none border-r-5 color-#eee font-bold">Send</button>
         </form>
       </div>
     );
